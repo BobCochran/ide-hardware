@@ -6,10 +6,10 @@ This package adds a "JeeLabs AVR Boards" entry to the Tools -> Boards menu.
 
 # Installation and use
 
-* Download or "git clone" this project at <https://github.com/jcw/ide-hardware>
 * Make sure your IDE's "Sketchbook location" contains a `hardware` folder
-* Rename the folder to `jeelabs` (!) and place it inside that `hardware` folder
-* Restart the IDE if it was still running
+* Download or "git clone" this project at <https://github.com/jcw/ide-hardware>
+* Rename the download to `jeelabs` (!) and put it inside that `hardware` folder
+* Restart the Arduino IDE if it was still running, so it'll pick up the change
 * You should see a new "JeeLabs AVR boards" entry in the Tools -> Board menu
 * Select Tools -> Programmer -> Arduino as ISP
 * See [this post][1] on the JeeLabs weblog for ISP programming a JeeNode Micro
