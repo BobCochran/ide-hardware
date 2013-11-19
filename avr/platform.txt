@@ -57,9 +57,17 @@ tools.avrdude.config.path={runtime.ide.path}/hardware/tools/avr/etc/avrdude.conf
 tools.avrdude.cmd.path.linux={runtime.ide.path}/hardware/tools/avrdude
 tools.avrdude.config.path.linux={runtime.ide.path}/hardware/tools/avrdude.conf
 
+tools.avrdude.erase.params.verbose=-v -v -v -v
+tools.avrdude.erase.params.quiet=-q -q
+tools.avrdude.erase.pattern="{cmd.path}" "-C{config.path}" {erase.verbose} -p{build.mcu} -c{erase.protocol} -P{serial.port} -b{erase.speed} -e -Uefuse:w:{bootloader.extended_fuses}:m -Uhfuse:w:{bootloader.high_fuses}:m -Ulfuse:w:{bootloader.low_fuses}:m
+
 tools.avrdude.upload.params.verbose=-v -v -v -v
 tools.avrdude.upload.params.quiet=-q -q
 tools.avrdude.upload.pattern="{cmd.path}" "-C{config.path}" {upload.verbose} -p{build.mcu} -c{upload.protocol} -P{serial.port} -b{upload.speed} "-Uflash:w:{build.path}/{build.project_name}.hex:i"
+
+tools.avrdude.bootloader.params.verbose=-v -v -v -v
+tools.avrdude.bootloader.params.quiet=-q -q
+tools.avrdude.bootloader.pattern="{cmd.path}" "-C{config.path}" {bootloader.verbose} -p{build.mcu} -c{bootloader.protocol} -P{serial.port} -b{bootloader.speed} "-Uflash:w:{bootloader.file}:i"
 
 tools.avrdude.program.params.verbose=-v -v -v -v
 tools.avrdude.program.params.quiet=-q -q

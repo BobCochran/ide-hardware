@@ -3,15 +3,27 @@ jnmicro.upload.tool=avrdude
 jnmicro.upload.protocol=arduino
 jnmicro.upload.maximum_size=8192
 jnmicro.upload.speed=9600
+# Added erase.speed and erase.protocol parameters with help from
+# JohnO on the JeeLabs Forums. See thread at http://jeelabs.net/boards/7/topics/2986
+# Change erase.protocol to arduino
+jnmicro.erase.speed=9600
+jnmicro.erase.protocol=arduino
 
+# Next line jnmicro.bootloader.speed set by Bob Cochran
+jnmicro.bootloader.speed=9600
+# Next line sets the programmer for the bootloader -- added by Bob Cochran
+jnmicro.bootloader.protocol=arduino
 jnmicro.bootloader.tool=avrdude
 jnmicro.bootloader.low_fuses=0xC2
 jnmicro.bootloader.high_fuses=0xD7
 jnmicro.bootloader.extended_fuses=0xFF
 jnmicro.bootloader.unlock_bits=0xFF
 jnmicro.bootloader.lock_bits=0xFF
-# FIXME this boot loader is bogus, IDE 1.5.x does not look in the right place?
-jnmicro.bootloader.file=atmega8/ATmegaBOOT.hex
+# Bootloader file "guessed at" by BobCochran after looking at JohnO's
+# t84db entries posted to http://jeelabs.net/boards/7/topics/2986
+# Edit bootloader file below to a preferred bootloader if you do not
+# want the bootloader shown.
+jnmicro.bootloader.file={sketchbook.path}/hardware/jeelabs/avr/bootloaders/empty/empty84at8.hex
 
 jnmicro.build.mcu=attiny84
 jnmicro.build.f_cpu=8000000L
