@@ -9,7 +9,6 @@ on the JeeNode Micro device and to additionally upload sketches to the Micro.
  
 
 # REQUIRED HARDWARE:
-  ==================
 
 JeeNode Micro device sold by jeelabs.net or moderndevice.com.
 It is most convenient to install female headers on the MOSI/MISO/SCK/RST
@@ -37,9 +36,12 @@ A spare LED and 330 Ohm resistor is nice to have so that you can immediately
 test an "LED blinking" sketch once a bootloader has been put on the JeeNode 
 Micro and you can then test whether a sketch can be uploaded to it successfully.
 
+# PHOTO ARCHIVE
+
+See the hardware_example_photos folder for images of different development boards
+used by others to program the JeeNode Micro.
 
 # REQUIRED SOFTWARE:
-  ==================
 
 Arduino IDE, version 1.5.x or higher
 
@@ -47,12 +49,18 @@ This software package. It primarily contains device files which are specific to
 erasing, bootloader and uploading operations on the ATTINY84 chip that is used in
 the JeeNode Micro.
 
+If your intent is to use a JeeNode V6 device in order to program the JeeNode
+Micro, you must first upload the isp_flash.ino sketch to this JeeNode V6, which we
+will call the "programmer".
+
 # HARDWARE SET-UP
-  ===============
 
 It is assumed that you have a JeeNode Micro device onto which you have soldered
-the antenna. You should also have soldered female headers to the MOSI/MISO/SCK/RST
-pins of the micro and your choice of male or female pins to the remaining pins.
+the antenna. You wish to program the ATTINY84 chip on this device using the Arduino
+IDE. We will call this JeeNode Micro the "target" board.
+
+You should also have soldered female headers to the MOSI/MISO/SCK/RST
+pins of the Micro and your choice of male or female pins to the remaining pins.
 It is convenient, but not needed, to solder a 20mm CR2032 battery holder to the
 provided + and - pins on the underside of the micro. (Note that the battery holder
 body will tend to butt tightly against the DIO2/Arduino 8 and AIO2/Arduino 7 pins of
@@ -61,9 +69,9 @@ them.)
 
 In the example setup, it is also assumed you have a JeeNode V6 to act as the 
 Arduino "programmer". Also, we assume you have a "JeeNode Flash Board" which has
-been assembled with headers, reset button, resistor and LED. Note that this JeeNode V6 
-must have already been programmed with the isp_flash.ino sketch so that it is prepared
-to act as a programmer device.
+been assembled with headers, reset button, resistor and LED. It is worth repeating 
+that this JeeNode V6 must have already been programmed with the isp_flash.ino 
+sketch so that it is prepared to act as a programmer device.
 
 The Flash Board must be plugged into all 4 of the "Ports" of the JeeNode V6.
 
@@ -90,9 +98,12 @@ http://jeelabs.org/2013/03/20/programming-the-jnu-again/
 
 http://jeelabs.org/2013/03/03/programming-the-jnu-v3-part-1/
 
-   
+There are other devices that can be used as the programmer, and some may offer
+less "bother" and complexity than the procedure shown above. To get some idea of
+what other JeeNode Micro users are using as programmer devices, see the 
+hardware_example_photos folder in this distribution.
+ 
 # Installation and use of this software package
-  =============================================
 
 The software is meant to work with the Arduino IDE, version 1.5.x or higher. It
 has been tested successfully on versions 1.5.2, 1.5.4, and 1.5.4r2. When installed
@@ -130,20 +141,25 @@ may want to note down this path before beginning software installation.
   will be quite a lot of output to the serial console window. A nice way to test that
   your JeeNode Micro is working is to upload a sketch that causes an LED connected
   to one of the Micro's digital pins to blink.  
+* Apparently, uploading a sketch will wipe out the bootloader on an ATTINY84 device. 
+  This is per advice from other contributors. Additional detail on this will be
+  added as it is learned.
 
 
 # License
-  =======
 
-GNU Lesser GPL, same as the original code (see below).
+Material and code added by the BobCochran/ide-hardware fork (that is, this fork)
+is Creative Commons licensed. 
+
+Material from the jcw/ide-hardware is licensed as GNU Lesser GPL, same as the 
+original code (see below).
 
 # Credits
-  =======
 
 This fork of the jcw/ide-jardware repository was created by Bob Cochran with
-considerable support and assistance from "JohnO" and "Martynj" on the JeeLabs.net 
-Support forums. This fork was made possible through a posting by "Henry" on the
-forums. Please see this thread:
+considerable support and assistance from "JohnO", "Martynj" and "Wolfpackmars2" 
+on the JeeLabs.net Support forums. This fork was made possible through a posting 
+by "Henry" on the forums. Please see this thread:
 
 http://jeelabs.net/boards/7/topics/2986?page=1&r=3126
 
@@ -155,7 +171,7 @@ platform.txt files, and to provide additional documentation in this README.txt
 file.
 
 # Notes from the original jcw/ide-hardware project:
-  ==================================================
+
 
 This code was adapted from <http://code.google.com/p/arduino-tiny/>:
 
